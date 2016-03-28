@@ -46,7 +46,7 @@ android {
 dependencies {
     compile project(':domain')
     compile project(':data')
-
+    compile project(':cmadsdk_base_world_V3.3.0')
     def appDependencies = rootProject.ext.appDependencies
 
     compile appDependencies.supportDesign

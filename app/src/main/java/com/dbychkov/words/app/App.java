@@ -18,6 +18,7 @@ package com.dbychkov.words.app;
 
 import android.app.Application;
 
+import com.cmcm.adsdk.CMAdManager;
 import com.dbychkov.words.dagger.component.ApplicationComponent;
 import com.dbychkov.words.dagger.component.DaggerApplicationComponent;
 import com.dbychkov.words.dagger.module.ApplicationModule;
@@ -42,6 +43,12 @@ public class App extends Application {
         singleton = this;
         setUncaughtExceptionHandler();
         initApplicationComponent();
+
+        //Initialize sdk
+        //First parameter: context
+        //Second parameter: Mid (the first four numbers of Posid)
+        //Product channel ID, could be empty string if none
+        CMAdManager.applicationInit(this, "1094", "");
     }
 
     private ApplicationComponent applicationComponent;
